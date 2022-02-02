@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+FileRenamer/Debug/
+FileRenamer/vcpkg_installed/
+FileRenamer/.vs/
