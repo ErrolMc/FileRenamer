@@ -1,9 +1,5 @@
-#include <wx/wxprec.h>
-#ifndef WX_PRECOMP
 #include <wx/wx.h>
-#endif
-
-#include "MyFrame.h"
+#include "MainFrame.h"
 
 class Application : public wxApp
 {
@@ -14,7 +10,7 @@ public:
 wxIMPLEMENT_APP(Application);
 bool Application::OnInit()
 {
-    MyFrame* frame = new MyFrame();
+    MainFrame* frame = new MainFrame();
     frame->Show(true);
     return true;
 }

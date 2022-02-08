@@ -142,11 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddRuleFrame.cpp" />
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="MyFrame.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyFrame.h" />
+    <ClInclude Include="AddRuleFrame.h" />
+    <ClInclude Include="MainFrame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
