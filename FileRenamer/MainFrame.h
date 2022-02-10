@@ -17,7 +17,7 @@ public:
     MainFrame();
     void OnClose_AddRule();
 private:
-    State state;
+    State state = State::Idle;
     wxMenuBar* m_MenuBar = nullptr;
 
     // rule tool bar
