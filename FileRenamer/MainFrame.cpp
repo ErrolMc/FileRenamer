@@ -30,8 +30,11 @@ MainFrame::MainFrame() : wxFrame(NULL, wxID_ANY, "Errol's File Renamer")
 
     this->SetToolBar(m_RuleToolBar);
     this->SetMenuBar(m_MenuBar);
-
+     
     this->Bind(wxEVT_MENU, &MainFrame::OnExit, this, wxID_EXIT);
+
+    m_AddRuleFrame = new AddRuleFrame(this);
+    m_AddRuleFrame->Show(true);
 }
 
 void MainFrame::OnClick_AddRule(wxCommandEvent& evt) 

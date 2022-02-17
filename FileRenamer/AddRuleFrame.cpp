@@ -7,20 +7,21 @@ AddRuleFrame::AddRuleFrame(MainFrame* parent) : wxFrame(parent, wxID_ANY, "Add R
 	wxPanel* panel_left = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(200, 200));
 	panel_left->SetBackgroundColour(wxColor(255, 255, 255));
 
-	wxPanel* panel_right = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
+	Border* panel_right = new Border(this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
 	panel_right->SetBackgroundColour(wxColor(255, 255, 255));
-
-	wxPanel* panel_top_left = new wxPanel(panel_left, wxID_ANY, wxDefaultPosition, wxSize(200, 400));
-	panel_top_left->SetBackgroundColour(wxColor(0, 0, 0));
 
 	wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
 	sizer->Add(panel_left, 0, wxEXPAND | wxLEFT | wxTOP | wxBOTTOM, 10);
 	sizer->Add(panel_right, 2, wxEXPAND | wxALL, 10);
 
-	wxBoxSizer* sizer_top = new wxBoxSizer(wxHORIZONTAL);
-	sizer_top->Add(panel_top_left, 1, wxALL, 10);
+	// top left panel
+	wxPanel* panel_top_left = new wxPanel(panel_left, wxID_ANY, wxDefaultPosition, wxSize(200, 400));
+	panel_top_left->SetBackgroundColour(wxColor(0, 0, 0));
 
-	panel_left->SetSizerAndFit(sizer_top);
+	// the sizer for all lefts shit
+	wxBoxSizer* sizer_left = new wxBoxSizer(wxHORIZONTAL);
+	sizer_left->Add(panel_top_left, 1, wxALL, 10);
+	panel_left->SetSizerAndFit(sizer_left);
 
 	this->SetSizerAndFit(sizer);
 	
