@@ -4,28 +4,16 @@ AddRuleFrame::AddRuleFrame(MainFrame* parent) : wxFrame(parent, wxID_ANY, "Add R
 {
 	m_MainFrame = parent;
 
-	wxPanel* panel_left = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(200, 200));
-	panel_left->SetBackgroundColour(wxColor(255, 255, 255));
-
-	Border* panel_right = new Border(this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
-	panel_right->SetBackgroundColour(wxColor(255, 255, 255));
+	Border* panel_left = new Border(wxColor(255, 255, 255), wxColor(0, 0, 0), 2, this, wxID_ANY, wxDefaultPosition, wxSize(200, 200));
+	Border* panel_right = new Border(wxColor(255, 255, 255), wxColor(0, 0, 0), 2, this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
 
 	wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
 	sizer->Add(panel_left, 0, wxEXPAND | wxLEFT | wxTOP | wxBOTTOM, 10);
 	sizer->Add(panel_right, 2, wxEXPAND | wxALL, 10);
 
-	// top left panel
-	wxPanel* panel_top_left = new wxPanel(panel_left, wxID_ANY, wxDefaultPosition, wxSize(200, 400));
-	panel_top_left->SetBackgroundColour(wxColor(0, 0, 0));
-
-	// the sizer for all lefts shit
-	wxBoxSizer* sizer_left = new wxBoxSizer(wxHORIZONTAL);
-	sizer_left->Add(panel_top_left, 1, wxALL, 10);
-	panel_left->SetSizerAndFit(sizer_left);
-
 	this->SetSizerAndFit(sizer);
 	
-	wxListBox* m_ButtonListBox = new wxListBox(panel_top_left, wxID_ANY, wxPoint(10, 10), wxSize(180, 300));
+	wxListBox* m_ButtonListBox = new wxListBox(panel_left, wxID_ANY, wxPoint(10, 10), wxSize(180, 300));
 	m_ButtonListBox->Append(wxT("Insert"));
 	m_ButtonListBox->Append(wxT("Delete"));
 	m_ButtonListBox->Append(wxT("Remove"));

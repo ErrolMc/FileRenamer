@@ -1,13 +1,26 @@
 #include "Border.h"
 #include <wx/print.h>
 
-Border::Border(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size) : wxPanel(parent, id, pos, size)
+Border::Border(const wxColor& mainColor, const wxColor& borderColor, int borderWidth, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size) : wxPanel(parent, id, pos, size)
 {
-	wxPanel* center = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
-	center->SetBackgroundColour(wxColor(0, 0, 0));
+	wxSize centerSize = wxSize(size.x - borderWidth, size.y - borderWidth);
 
-	wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
-	sizer->Add(center, 1, wxEXPAND | wxALL, 10);
+	center = new wxPanel(this, wxID_ANY, wxDefaultPosition, centerSize); // some math to calculate min size based on size and border width
+	center->SetBackgroundColour(mainColor);
+
+	sizer = new wxBoxSizer(wxVERTICAL);
+	sizer->Add(center, 1, wxEXPAND | wxALL, borderWidth);
 
 	this->SetSizerAndFit(sizer);
+	this->SetBackgroundColour(borderColor);
+}
+
+wxPanel* Border::GetCenter()
+{
+	return center;
+}
+
+wxBoxSizer* Border::GetSizer()
+{
+	return sizer;
 }

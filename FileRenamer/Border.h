@@ -4,6 +4,11 @@
 
 class Border : public wxPanel
 {
+private:
+	wxPanel* center;
+	wxBoxSizer* sizer;
 public:
-	Border(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size);
+	Border(const wxColor& mainColor, const wxColor& borderColor, int borderWidth, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size);
+	wxPanel* GetCenter();
+	wxBoxSizer* GetSizer();
 };
