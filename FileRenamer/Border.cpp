@@ -40,3 +40,9 @@ void Border::OnResize(wxSizeEvent& evt)
 {
 	this->Refresh();
 }
+
+Border::~Border()
+{
+	delete(mainColor);
+	delete(borderColor);
+}

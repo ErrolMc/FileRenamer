@@ -11,6 +11,8 @@ private:
 	int borderWidth;
 public:
 	Border(wxColor* mainColor, wxColor* borderColor, int borderWidth, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size);
+	~Border();
+	
 	void Render(wxDC& dc);
 
 	void OnPaint(wxPaintEvent& evt);
