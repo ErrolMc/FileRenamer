@@ -4,8 +4,8 @@ AddRuleFrame::AddRuleFrame(MainFrame* parent) : wxFrame(parent, wxID_ANY, "Add R
 {
 	m_MainFrame = parent;
 
-	Border* panel_left = new Border(wxColor(255, 255, 255), wxColor(0, 0, 0), 2, this, wxID_ANY, wxDefaultPosition, wxSize(200, 200));
-	Border* panel_right = new Border(wxColor(255, 255, 255), wxColor(0, 0, 0), 2, this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
+	Border* panel_left = new Border(new wxColor(255, 255, 255), new wxColor(0, 0, 0), 5, this, wxID_ANY, wxDefaultPosition, wxSize(200, 200));
+	Border* panel_right = new Border(new wxColor(255, 255, 255), new wxColor(0, 0, 0), 5, this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
 
 	wxBoxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
 	sizer->Add(panel_left, 0, wxEXPAND | wxLEFT | wxTOP | wxBOTTOM, 10);
@@ -25,3 +25,4 @@ AddRuleFrame::~AddRuleFrame()
 {
 	m_MainFrame->OnClose_AddRule();
 }
+

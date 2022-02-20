@@ -1,14 +1,20 @@
 #pragma once
 
 #include <wx/wx.h>
+#include <wx/sizer.h>
 
 class Border : public wxPanel
 {
 private:
-	wxPanel* center;
-	wxBoxSizer* sizer;
+	wxColor* mainColor = nullptr;
+	wxColor* borderColor = nullptr;
+	int borderWidth;
 public:
-	Border(const wxColor& mainColor, const wxColor& borderColor, int borderWidth, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size);
-	wxPanel* GetCenter();
-	wxBoxSizer* GetSizer();
+	Border(wxColor* mainColor, wxColor* borderColor, int borderWidth, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size);
+	void Render(wxDC& dc);
+
+	void OnPaint(wxPaintEvent& evt);
+	void OnResize(wxSizeEvent& evt);
+
+	DECLARE_EVENT_TABLE()
 };
