@@ -30,6 +30,9 @@
     <ClCompile Include="ListButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InsertWindow.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainFrame.h">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="ListButton.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertWindow.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

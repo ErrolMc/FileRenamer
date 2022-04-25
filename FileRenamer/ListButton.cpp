@@ -47,16 +47,12 @@ void ListButton::OnMouseEnter(wxMouseEvent& evt)
 {
 	hovered = true;
 	this->Refresh();
-
-	wxLogDebug("Enter");
 }
 
 void ListButton::OnMouseLeave(wxMouseEvent& evt)
 {
 	hovered = false;
 	this->Refresh();
-
-	wxLogDebug("Leave");
 }
 
 ListButton::~ListButton()

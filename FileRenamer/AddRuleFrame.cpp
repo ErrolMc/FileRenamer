@@ -23,8 +23,17 @@ AddRuleFrame::AddRuleFrame(MainFrame* parent) : wxFrame(parent, wxID_ANY, "Add R
 
 	m_PanelLeft->SetSizerAndFit(buttonSizer);
 
+	wxPanel* insertWindow = new InsertWindow(m_PanelRight);
+	
+	wxBoxSizer* rightSizer = new wxBoxSizer(wxHORIZONTAL);
+	rightSizer->Add(insertWindow, 1, wxEXPAND | wxALL, 35);
+
+	m_PanelRight->SetSizer(rightSizer);
+
 	this->SetSizerAndFit(sizer);
 	this->SetBackgroundColour(wxColor(45, 45, 48));
+
+	
 }
 
 AddRuleFrame::~AddRuleFrame()

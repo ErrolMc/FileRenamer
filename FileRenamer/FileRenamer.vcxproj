@@ -145,12 +145,14 @@
     <ClCompile Include="AddRuleFrame.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Border.cpp" />
+    <ClCompile Include="InsertWindow.cpp" />
     <ClCompile Include="ListButton.cpp" />
     <ClCompile Include="MainFrame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddRuleFrame.h" />
     <ClInclude Include="Border.h" />
+    <ClInclude Include="InsertWindow.h" />
     <ClInclude Include="ListButton.h" />
     <ClInclude Include="MainFrame.h" />
   </ItemGroup>

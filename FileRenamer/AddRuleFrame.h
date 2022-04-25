@@ -5,6 +5,8 @@
 #include "Border.h"
 #include "ListButton.h"
 
+#include "InsertWindow.h"
+
 #include "Border.h"
 #include "MainFrame.h"
 class MainFrame; // to avoid circular reference
