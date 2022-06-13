@@ -34,3 +34,4 @@
 FileRenamer/Debug/
 FileRenamer/vcpkg_installed/
 FileRenamer/.vs/
+FileRenamer-mac/cmake-build-debug/
