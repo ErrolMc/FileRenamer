@@ -1,7 +1,7 @@
 #include "InsertWindow.h"
 
 InsertWindow::InsertWindow(wxWindow* parent)
-        : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE)
+        : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize)
 {
     wxStaticText* insertLabel = new wxStaticText(this, wxID_ANY, "Insert:", wxPoint(30, 32));
     insertLabel->SetForegroundColour(wxColor(255, 255, 255));

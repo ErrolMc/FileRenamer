@@ -30,7 +30,7 @@ include(${wxWidgets_USE_FILE})
 
 # Define a variable containing a list of source files for the project
 set(SRC_FILES
-        main.cpp MainFrame.h MainFrame.cpp ListButton.h ListButton.cpp InsertWindow.h InsertWindow.cpp Border.h Border.cpp AddRuleFrame.h AddRuleFrame.cpp)
+        main.cpp MainFrame.h MainFrame.cpp ListButton.h ListButton.cpp InsertWindow.h InsertWindow.cpp Border.h Border.cpp AddRuleFrame.h AddRuleFrame.cpp DeleteWindow.h DeleteWindow.cpp callback.hpp)
 if(WIN32)
     # Include a RC file for windows
     list(APPEND SRC_FILES ../sample.rc)

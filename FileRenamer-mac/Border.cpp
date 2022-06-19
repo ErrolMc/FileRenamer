@@ -2,7 +2,7 @@
 #include "wx/dcbuffer.h"
 
 Border::Border(wxColor* mainColor, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size)
-        : wxPanel(parent, id, pos, size, wxBORDER_SIMPLE)
+        : wxPanel(parent, id, pos, size)
 {
     this->mainColor = mainColor;
 

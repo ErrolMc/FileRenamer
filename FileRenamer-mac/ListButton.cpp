@@ -1,15 +1,18 @@
 #include "ListButton.h"
 #include "wx/dcbuffer.h"
 
-ListButton::ListButton(wxString label, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size) : wxPanel(parent, id, pos, size)
+ListButton::ListButton(wxString label, int ind, cb::Callback1<void, int> callback, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size) : wxPanel(parent, id, pos, size)
 {
     this->label = label;
     this->hovered = false;
+    this->ind = ind;
+    this->callback = callback;
 
     this->Connect(wxEVT_PAINT, wxPaintEventHandler(ListButton::OnPaint));
     this->Connect(wxEVT_SIZE, wxSizeEventHandler(ListButton::OnResize));
     this->Connect(wxEVT_ENTER_WINDOW, wxMouseEventHandler(ListButton::OnMouseEnter));
     this->Connect(wxEVT_LEAVE_WINDOW, wxMouseEventHandler(ListButton::OnMouseLeave));
+    this->Connect(wxEVT_LEFT_UP, wxMouseEventHandler(ListButton::OnMouseClick));
 }
 
 void ListButton::Render(wxDC& dc)
@@ -53,6 +56,11 @@ void ListButton::OnMouseLeave(wxMouseEvent& evt)
 {
     hovered = false;
     this->Refresh();
+}
+
+void ListButton::OnMouseClick(wxMouseEvent &evt)
+{
+    callback.Call(ind);
 }
 
 ListButton::~ListButton()
