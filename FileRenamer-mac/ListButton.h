@@ -16,7 +16,6 @@ public:
     ListButton(wxString label, int ind, cb::Callback1<void, int> callback, wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size);
     ~ListButton();
 
-
     void Render(wxDC& dc);
 
     void OnPaint(wxPaintEvent& evt);

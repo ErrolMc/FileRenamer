@@ -29,9 +29,12 @@ private:
 
     wxBoxSizer* m_SelectedWindowSizer;
     wxBoxSizer* m_ButtonSizer;
-    wxBoxSizer* m_PanelSizer;
+    wxBoxSizer* m_MainSizer;
+    wxBoxSizer* m_SideBySizePanelSizer;
+    wxBoxSizer* m_BottomButtonsSizer;
     wxPanel* m_PanelLeft;
     wxPanel* m_PanelRight;
+
 
 
     // selected button

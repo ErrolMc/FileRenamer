@@ -6,11 +6,11 @@ AddRuleFrame::AddRuleFrame(MainFrame* parent) : wxFrame(parent, wxID_ANY, "Add R
     m_CurType = RuleType::none;
 
     m_PanelLeft = new Border(new wxColor(30, 30, 30), this, wxID_ANY, wxDefaultPosition, wxSize(200, 200));
-    m_PanelRight = new Border(new wxColor(30, 30, 30), this, wxID_ANY, wxDefaultPosition, wxSize(600, 600));
+    m_PanelRight = new Border(new wxColor(30, 30, 30), this, wxID_ANY, wxDefaultPosition, wxSize(600, 500));
 
-    m_PanelSizer = new wxBoxSizer(wxHORIZONTAL);
-    m_PanelSizer->Add(m_PanelLeft, 0, wxEXPAND | wxLEFT | wxTOP | wxBOTTOM, 10);
-    m_PanelSizer->Add(m_PanelRight, 2, wxEXPAND | wxALL, 10);
+    m_SideBySizePanelSizer = new wxBoxSizer(wxHORIZONTAL);
+    m_SideBySizePanelSizer->Add(m_PanelLeft, 0, wxEXPAND | wxLEFT | wxTOP | wxBOTTOM, 10);
+    m_SideBySizePanelSizer->Add(m_PanelRight, 2, wxEXPAND | wxALL, 10);
 
     m_ButtonSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -24,10 +24,21 @@ AddRuleFrame::AddRuleFrame(MainFrame* parent) : wxFrame(parent, wxID_ANY, "Add R
 
     m_PanelLeft->SetSizerAndFit(m_ButtonSizer);
 
+    m_MainSizer = new wxBoxSizer(wxVERTICAL);
+    m_BottomButtonsSizer = new wxBoxSizer(wxHORIZONTAL);
+
+    Border* m_AddRuleBtn = new Border(new wxColor(30, 30, 30), this, wxID_ANY, wxDefaultPosition, wxSize(200, 40));
+    Border* m_CloseButton = new Border(new wxColor(30, 30, 30), this, wxID_ANY, wxDefaultPosition, wxSize(200, 40));
+    m_BottomButtonsSizer->Add(m_AddRuleBtn, 2, wxEXPAND | wxBOTTOM | wxLEFT, 10);
+    m_BottomButtonsSizer->Add(m_CloseButton, 0, wxEXPAND | wxBOTTOM | wxLEFT | wxRIGHT, 10);
+
+    m_MainSizer->Add(m_SideBySizePanelSizer, 1, wxEXPAND);
+    m_MainSizer->Add(m_BottomButtonsSizer, 0, wxEXPAND);
+
     m_SelectedWindowSizer = new wxBoxSizer(wxHORIZONTAL);
     m_CurFrame = nullptr;
 
-    this->SetSizerAndFit(m_PanelSizer);
+    this->SetSizerAndFit(m_MainSizer);
     this->SetBackgroundColour(wxColor(45, 45, 48));
 }
 
